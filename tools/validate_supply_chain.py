@@ -57,7 +57,7 @@ def main():
         return 2
     errors = validate(record)
     if errors:
-        print("\\n".join(errors), file=sys.stderr)
+        print("\n".join(errors), file=sys.stderr)
         return 1
     print("Record structure valid. No signature or artifact verification was performed.")
     return 0
