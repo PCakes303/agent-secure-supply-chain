@@ -26,6 +26,14 @@ class SupplyChainValidationTests(unittest.TestCase):
         record = copy.deepcopy(VALID); record["source"]["repository"] = "http://example.com/repo"
         self.assertTrue(validate(record))
 
+    def test_rejects_url_without_hostname(self):
+        record = copy.deepcopy(VALID); record["source"]["repository"] = "https:///missing-host"
+        self.assertTrue(validate(record))
+
+    def test_rejects_credentials_in_source_url(self):
+        record = copy.deepcopy(VALID); record["source"]["repository"] = "https://user:pass@example.com/repo"
+        self.assertTrue(validate(record))
+
     def test_rejects_bad_commit(self):
         record = copy.deepcopy(VALID); record["source"]["commit"] = "deadbeef"
         self.assertTrue(validate(record))
