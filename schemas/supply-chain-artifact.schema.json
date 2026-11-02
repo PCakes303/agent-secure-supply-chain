@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/PCakes303/agent-secure-supply-chain/blob/main/schemas/supply-chain-artifact.schema.json",
+  "title": "Supply Chain Artifact Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_version",
+    "artifact",
+    "source",
+    "sbom",
+    "verification"
+  ],
+  "properties": {
+    "record_version": {
+      "const": "1.0.0"
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version",
+        "digest"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "digest": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "algorithm",
+            "value"
+          ],
+          "properties": {
+            "algorithm": {
+              "const": "sha256"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{64}$"
+            }
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "repository",
+        "commit"
+      ],
+      "properties": {
+        "repository": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        },
+        "commit": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{40,64}$"
+        }
+      }
+    },
+    "sbom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "uri"
+      ],
+      "properties": {
+        "format": {
+          "enum": [
+            "SPDX",
+            "CycloneDX"
+          ]
+        },
+        "uri": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://"
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signature_present",
+        "signature_verified"
+      ],
+      "properties": {
+        "signature_present": {
+          "type": "boolean"
+        },
+        "signature_verified": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}\n
