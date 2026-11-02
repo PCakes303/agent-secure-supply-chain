@@ -24,4 +24,4 @@
   ],
   "tested_combinations": [],
   "breaking_change_policy": "Major versions may remove or change required fields or security semantics; minor versions add backward-compatible optional fields; patch versions correct editorial or non-semantic defects."
-}\n
+}
