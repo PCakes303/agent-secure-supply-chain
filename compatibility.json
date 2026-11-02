@@ -1,0 +1,27 @@
+{
+  "compatibility_version": "1.1.0",
+  "repository": "agent-secure-supply-chain",
+  "policy": "Dependencies describe architectural relationships only. They are not runtime interoperability claims. A dependency is marked tested only after reproducible cross-repository tests and evidence are published.",
+  "dependencies": [
+    {
+      "repository_id": "foundation",
+      "version_range": "contract version not yet pinned",
+      "status": "declared",
+      "evidence": []
+    },
+    {
+      "repository_id": "identity-trust",
+      "version_range": "future integration; not yet implemented",
+      "status": "declared",
+      "evidence": []
+    },
+    {
+      "repository_id": "audit-provenance",
+      "version_range": "future integration; not yet implemented",
+      "status": "declared",
+      "evidence": []
+    }
+  ],
+  "tested_combinations": [],
+  "breaking_change_policy": "Major versions may remove or change required fields or security semantics; minor versions add backward-compatible optional fields; patch versions correct editorial or non-semantic defects."
+}\n
