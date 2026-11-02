@@ -26,11 +26,13 @@
       "properties": {
         "name": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 160
         },
         "version": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "maxLength": 64
         },
         "digest": {
           "type": "object",
@@ -62,11 +64,13 @@
         "repository": {
           "type": "string",
           "format": "uri",
-          "pattern": "^https://"
+          "maxLength": 2048,
+          "pattern": "^https://[^/@\\s?#]+(?:/[^#\\s]*)?(?:\\?[^#\\s]*)?$"
         },
         "commit": {
           "type": "string",
-          "pattern": "^[a-fA-F0-9]{40,64}$"
+          "pattern": "^[a-fA-F0-9]{40,64}$",
+          "maxLength": 64
         }
       }
     },
@@ -87,7 +91,8 @@
         "uri": {
           "type": "string",
           "format": "uri",
-          "pattern": "^https://"
+          "maxLength": 2048,
+          "pattern": "^https://[^/@\\s?#]+(?:/[^#\\s]*)?(?:\\?[^#\\s]*)?$"
         }
       }
     },
