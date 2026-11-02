@@ -1,0 +1,61 @@
+{
+  "capabilities_version": "1.1.0",
+  "repository": "agent-secure-supply-chain",
+  "repository_id": "secure-supply-chain",
+  "maturity": "scaffolding",
+  "capabilities": [
+    {
+      "id": "supply-chain.record-schema",
+      "name": "Artifact provenance record schema",
+      "status": "scaffolded",
+      "description": "A versioned JSON Schema describes artifact digest, source commit, SBOM reference, and signature state.",
+      "evidence": [
+        "schemas/supply-chain-artifact.schema.json"
+      ],
+      "limitations": [
+        "Schema validation does not verify signatures, artifact contents, publisher identity, or SBOM correctness."
+      ]
+    },
+    {
+      "id": "supply-chain.record-validator",
+      "name": "Dependency-free record validator",
+      "status": "scaffolded",
+      "description": "A Python validator checks core fields, digest and commit syntax, HTTPS references, and signature-state consistency.",
+      "evidence": [
+        "tools/validate_supply_chain.py",
+        "tests/test_supply_chain.py"
+      ],
+      "limitations": [
+        "Validation is structural and does not perform cryptography, network retrieval, scanning, or policy enforcement."
+      ]
+    },
+    {
+      "id": "supply-chain.sbom-generation",
+      "name": "SBOM generation",
+      "status": "planned",
+      "description": "Generate SPDX or CycloneDX SBOMs from reproducible build inputs and artifacts.",
+      "evidence": [],
+      "limitations": [
+        "No SBOM generation implementation is present."
+      ]
+    },
+    {
+      "id": "supply-chain.signature-verification",
+      "name": "Cryptographic signature verification",
+      "status": "planned",
+      "description": "Verify artifact and provenance signatures against explicit trust roots and identity policy.",
+      "evidence": [],
+      "limitations": [
+        "No cryptographic signature verification implementation is present."
+      ]
+    }
+  ],
+  "explicit_non_capabilities": [
+    "Publisher authentication or identity proof",
+    "Artifact safety certification",
+    "SLSA or in-toto conformance",
+    "Dependency vulnerability scanning",
+    "Release signing or trusted key management",
+    "Execution of untrusted build or package scripts"
+  ]
+}\n
