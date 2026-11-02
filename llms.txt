@@ -1,0 +1,27 @@
+# Agent Secure Supply Chain
+
+> Public component 08 in the MrCakes931 Agent Intelligence Ecosystem. Defines initial contracts and validation for artifact identity, SBOM references, source provenance, and signature state.
+
+## Start here
+- [README](README.md)
+- [Agent instructions](AGENTS.md)
+- [Contract](docs/CONTRACT.md)
+- [Requirements](docs/REQUIREMENTS.md)
+- [Threat model](docs/THREAT_MODEL.md)
+- [Machine-readable repository manifest](manifest.json)
+- [Capabilities](capabilities.json)
+- [Compatibility](compatibility.json)
+- [Artifact record schema](schemas/supply-chain-artifact.schema.json)
+- [Example record](examples/supply-chain-artifact.json)
+
+## Current capability boundary
+The current code validates metadata shape and consistency only. It does not generate SBOMs, verify signatures, authenticate publishers, execute build steps, scan dependencies, or grant trust. A passing validation is not a security certification.
+
+## Ecosystem
+- [Master control plane](https://github.com/PCakes303/agent-intelligence-ecosystem)
+- [Public agent catalog](https://github.com/PCakes303/agent-intelligence-ecosystem/blob/main/registry/public-agent-catalog.json)
+- [Foundation requirements](https://github.com/PCakes303/agent-foundation-spec)
+- [Identity and trust contracts](https://github.com/PCakes303/agent-identity-trust)
+
+## Integration policy
+Dependencies are architectural declarations until reproducible cross-repository tests prove compatibility. No MCP server or A2A endpoint is deployed by this repository.
