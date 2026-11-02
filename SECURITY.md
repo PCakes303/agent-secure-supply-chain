@@ -4,7 +4,7 @@
 This repository handles public artifact metadata and supply-chain evidence contracts. The current implementation is a local structural validator; it does not verify signatures or execute artifacts.
 
 ## Reporting
-Do not publish credentials, signing keys, private vulnerability details, or exploit instructions in issues. Use GitHub's private vulnerability reporting feature if enabled for this repository; otherwise contact the repository owner through the GitHub profile and request a private disclosure channel.
+Do not publish credentials, signing keys, private vulnerability details, or exploit instructions in issues. Use GitHub private vulnerability reporting or a private security advisory if enabled for this repository. A dedicated private reporting address is not published here; if private reporting is unavailable, the owner must configure a private reporting channel before production use. Do not send exploit details or sensitive operational material through public channels.
 
 ## Expectations
 - Never commit secrets or private keys.
