@@ -20,6 +20,10 @@ This repository currently provides an initial, dependency-free contract and vali
 
 **Important:** the validator checks record structure and consistency only. It does not download artifacts, generate SBOMs, verify signatures, authenticate publishers, scan dependencies, or establish trust. A valid record is not proof that an artifact is safe or authentic.
 
+## License status
+
+The repository's code, documentation, schemas, examples, and other materials do not yet have an approved license decision. No root `LICENSE` file or GitHub license declaration is present. Reuse and redistribution rights must not be assumed; licensing remains pending repository-specific review.
+
 ## Quick start
 
 Requires Python 3.10+.
