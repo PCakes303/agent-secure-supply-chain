@@ -11,10 +11,10 @@ Define and validate portable, evidence-backed records for software artifacts, so
 
 ## Current implementation
 
-This repository currently provides an initial, dependency-free contract and validator:
+This repository currently provides an initial schema-backed contract and bounded validator:
 
 - A JSON Schema for artifact, source, SBOM, and verification metadata.
-- A Python validator for required fields, HTTPS references, SHA-256 syntax, source commit syntax, and consistent signature flags.
+- A Python validator that enforces the Draft 2020-12 schema, bounded JSON parsing, strict HTTPS URI policy, SHA-256 syntax, source commit syntax, and consistent signature flags.
 - Positive and negative unit tests.
 - A deliberately synthetic example record.
 
@@ -26,9 +26,10 @@ The repository's code, documentation, schemas, examples, and other materials do 
 
 ## Quick start
 
-Requires Python 3.10+.
+Requires Python 3.10+. Install the pinned development schema validator with `python -m pip install -r requirements-dev.txt`.
 
 ```bash
+python -m pip install -r requirements-dev.txt
 python tools/validate_supply_chain.py
 python -m unittest discover -s tests -v
 ```
