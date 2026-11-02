@@ -68,7 +68,7 @@ class SupplyChainValidationTests(unittest.TestCase):
             lambda r: r["sbom"].update(uri="https://example.com/" + "x" * 2050),
         ):
             record = copy.deepcopy(VALID); mutate(record)
-            self.assert_schema_reject(record)
+            self.assert_schema_rejects(record)
 
     def test_strict_json_parser_rejects_duplicate_keys_nonfinite_depth_and_size(self):
         raw_cases = (
