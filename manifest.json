@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/PCakes303/agent-secure-supply-chain/blob/main/manifest.json",
+  "manifest_version": "1.0.0",
+  "id": "secure-supply-chain",
+  "name": "agent-secure-supply-chain",
+  "visibility": "public",
+  "maturity": "scaffolding",
+  "summary": "Contracts and validation tools for artifact identity, SBOM references, source provenance, and signature-verification metadata.",
+  "license": {
+    "expression": null,
+    "status": "pending-review",
+    "notes": "License selection remains pending portfolio-wide legal and dependency review."
+  },
+  "interfaces": [
+    {
+      "name": "supply-chain-artifact-record",
+      "version": "1.0.0",
+      "kind": "schema",
+      "stability": "experimental"
+    },
+    {
+      "name": "supply-chain-record-validator",
+      "version": "0.1.0",
+      "kind": "cli",
+      "stability": "experimental"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "foundation",
+      "constraint": "contract dependency; version TBD",
+      "kind": "contract"
+    },
+    {
+      "id": "identity-trust",
+      "constraint": "future trust-policy integration; version TBD",
+      "kind": "optional"
+    },
+    {
+      "id": "audit-provenance",
+      "constraint": "future evidence integration; version TBD",
+      "kind": "optional"
+    }
+  ],
+  "security": {
+    "threat_model": "docs/THREAT_MODEL.md",
+    "secrets_in_repository": false,
+    "data_classification": "public",
+    "security_contact": null
+  },
+  "repository_url": "https://github.com/PCakes303/agent-secure-supply-chain",
+  "default_branch": "main",
+  "compatibility": [],
+  "evidence": [
+    {
+      "claim": "Initial artifact-record validation is scaffolded.",
+      "kind": "test",
+      "location": "tests/test_supply_chain.py"
+    }
+  ]
+}\n
