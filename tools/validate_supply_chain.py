@@ -30,7 +30,7 @@ def validate(record):
         errors.append("source must contain repository and commit")
     else:
         parsed = urlparse(source["repository"]) if isinstance(source["repository"], str) else None
-        if not parsed or parsed.scheme != "https" or not parsed.netloc:
+        if not parsed or parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
             errors.append("source.repository must be an HTTPS URI")
         if not isinstance(source["commit"], str) or not re.fullmatch(r"[a-fA-F0-9]{40,64}", source["commit"]):
             errors.append("source.commit must be a 40-64 character hexadecimal identifier")
