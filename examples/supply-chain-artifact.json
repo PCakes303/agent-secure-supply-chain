@@ -1,0 +1,23 @@
+{
+  "record_version": "1.0.0",
+  "artifact": {
+    "name": "example-component",
+    "version": "0.0.0-example",
+    "digest": {
+      "algorithm": "sha256",
+      "value": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "source": {
+    "repository": "https://github.com/example/example-component",
+    "commit": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "sbom": {
+    "format": "CycloneDX",
+    "uri": "https://example.invalid/sbom.cdx.json"
+  },
+  "verification": {
+    "signature_present": false,
+    "signature_verified": false
+  }
+}\n
